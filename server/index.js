@@ -11,10 +11,17 @@ let db;
 //init app
 const app = express();
 PORT = process.env.PORT;
+MONGO_URL = process.env.MONGO_URL;
 //middlewares
 app.use(express.json());
-app.use(cors());
-
+app.use(cors(
+  {
+    origin: ["https://deploy-mern-lwhq.vercel.app"],
+    methods: ["POST","GET"],
+    credentials:true
+  }
+))
+mongoose.connect(MONGO_URL);
 //routes
 app.use('/api/users',UserRouter)
 app.use("/api/transactions", transactionRoutes);
