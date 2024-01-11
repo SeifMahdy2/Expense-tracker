@@ -50,7 +50,7 @@ const handleSubmit_signup = (e) => {
     return;
   }
 
-axios.post("https://expense-tracker-rouge-chi.vercel.app/Signup", {
+axios.post("https://expense-tracker-frontend-nine.vercel.app/Signup", {
   username,
   Name,
   email: email_signup,
