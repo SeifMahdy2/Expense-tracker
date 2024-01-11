@@ -14,8 +14,6 @@ function Login_Signup() {
   const [email_signup, setEmail_signup] = useState()
   const [password_signup, setPassword_signup] = useState()
 
-  axios.defaults.withCredentials = true;
-
 
   const navigate = useNavigate()
 const validateSignup = () => {
@@ -27,7 +25,7 @@ const validateSignup = () => {
 
   const handleSubmit_login =  (e) => {
     e.preventDefault()
-    axios.post('https://expense-tracker-rouge-chi.vercel.app/Login', {username,password})
+    axios.post('http://localhost:4000/Login', {username,password})
     .then(result => {
       console.log(result)
       if (!username || !password){
@@ -50,7 +48,7 @@ const handleSubmit_signup = (e) => {
     return;
   }
 
-axios.post("https://expense-tracker-frontend-nine.vercel.app/Signup", {
+axios.post("http://localhost:4000/Signup", {
   username,
   Name,
   email: email_signup,
