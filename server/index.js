@@ -16,7 +16,7 @@ MONGO_URL = process.env.MONGO_URL;
 app.use(express.json());
 app.use(cors(
   {
-    origin: ["https://deploy-mern-lwhq.vercel.app"],
+    origin: ["https://expense-tracker-frontend-nine.vercel.app/"],
     methods: ["POST","GET"],
     credentials:true
   }
